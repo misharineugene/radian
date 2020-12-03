@@ -1,0 +1,90 @@
+// USER VARIABLES SECTION
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+$default-font: Roboto, sans-serif // User Font Family
+$default-font-size: 16px
+$default-font-weight: 400
+$default-line-height: 1.5
+// 
+$accent: orange // Accent Color
+$text: #333 // Text Color
+$green: green
+
+// Customization Bootstrap vars from "bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px
+$grid-columns: 12
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px)
+
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+@mixin font($fname, $furl, $weight: normal, $style: normal)
+  @font-face
+    font-family: $fname
+    font-weight: $weight
+    font-style: $style
+    src: local($fname), url('#{$furl}.eot')
+    src: local($fname), url('#{$furl}.eot?#iefix') format('embedded-opentype'), url('#{$furl}.woff') format('woff'), url('#{$furl}.woff2') format('woff2'), url('#{$furl}.ttf') format('truetype')
+
+  // OpenSans
+@include font("OpenSans", "../fonts/OpenSans/OpenSans-Regular", 400)
+@include font("OpenSans", "../fonts/OpenSans/OpenSans-SemiBold", 600)
+@include font("OpenSans", "../fonts/OpenSans/OpenSans-Bold", 700)
+@include font("OpenSans", "../fonts/OpenSans/OpenSans-ExtraBold", 900)
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+  color: #666
+
+::selection
+  background-color: $accent
+  color: #fff
+
+input, textarea
+  outline: none
+  &:focus:required:invalid
+    border-color: red
+  &:required:valid
+    border-color: green
+
+html, body
+  height: 100%
+  
+body
+  position: relative
+  //
+  min-width: 280px
+  margin: 0
+  overflow-x: hidden
+  // 
+  font-family: $default-font
+  font-size: $default-font-size
+  font-weight: $default-font-weight
+  line-height: $default-line-height
+  color: $text
+  input, textarea
+    &:focus:required:invalid
+      border-color: $accent
+    &:required:valid
+      border-color: $green
+
+////////////////////////////////////////////////
+// +media-breakpoint-down(lg) // ≤1200px
+// +media-breakpoint-down(md) // ≤992px
+// +media-breakpoint-down(sm) // ≤768px
+// +media-breakpoint-down(xs) // ≤576px
+////////////////////////////////////////////////
+// +media-breakpoint-up(sm) // ≥576px
+// +media-breakpoint-up(md) // ≥768px
+// +media-breakpoint-up(lg) // ≥992px
+// +media-breakpoint-up(xl) // ≥1200px
+////////////////////////////////////////////////
