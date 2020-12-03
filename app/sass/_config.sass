@@ -6,15 +6,16 @@ $default-font-size: 16px
 $default-font-weight: 400
 $default-line-height: 1.5
 // 
-$accent: orange // Accent Color
-$text: #333 // Text Color
+$accent: #003e84 // Accent Color
+$second: #ffbc21 // Second Color
+$text: #000 // Text Color
 $green: green
 
 // Customization Bootstrap vars from "bootstrap/scss/_variables.scss"
 $grid-gutter-width: 30px
 $grid-columns: 12
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
-$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px)
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1330px)
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1170px, xxl: 1440px)
 
 $gutter: $grid-gutter-width
 
@@ -36,11 +37,28 @@ $gutter: $grid-gutter-width
     src: local($fname), url('#{$furl}.eot')
     src: local($fname), url('#{$furl}.eot?#iefix') format('embedded-opentype'), url('#{$furl}.woff') format('woff'), url('#{$furl}.woff2') format('woff2'), url('#{$furl}.ttf') format('truetype')
 
-  // OpenSans
-@include font("OpenSans", "../fonts/OpenSans/OpenSans-Regular", 400)
-@include font("OpenSans", "../fonts/OpenSans/OpenSans-SemiBold", 600)
-@include font("OpenSans", "../fonts/OpenSans/OpenSans-Bold", 700)
-@include font("OpenSans", "../fonts/OpenSans/OpenSans-ExtraBold", 900)
+// Roboto
+@include font("Roboto", "../fonts/Roboto/Roboto-Thin", 100)
+@include font("Roboto", "../fonts/Roboto/Roboto-Light", 300)
+@include font("Roboto", "../fonts/Roboto/Roboto-Regular", 400)
+@include font("Roboto", "../fonts/Roboto/Roboto-Medium", 500)
+@include font("Roboto", "../fonts/Roboto/Roboto-Bold", 700)
+@include font("Roboto", "../fonts/Roboto/Roboto-Black", 900)
+
+// Arvo
+@include font("Arvo", "../fonts/Arvo/Arvo", 400)
+@include font("Arvo", "../fonts/Arvo/Arvo-Bold", 700)
+
+// Prompt
+@include font("Prompt", "../fonts/Prompt/Light", 100)
+@include font("Prompt", "../fonts/Prompt/Prompt-ExtraLight", 200)
+@include font("Prompt", "../fonts/Prompt/Prompt-Light", 300)
+@include font("Prompt", "../fonts/Prompt/Prompt-Regular", 400)
+@include font("Prompt", "../fonts/Prompt/Prompt-Medium", 500)
+@include font("Prompt", "../fonts/Prompt/Prompt-SemiBold", 600)
+@include font("Prompt", "../fonts/Prompt/Prompt-Bold", 700)
+@include font("Prompt", "../fonts/Prompt/Prompt-ExtraBold", 800)
+@include font("Prompt", "../fonts/Prompt/Prompt-Black", 900)
 
 // GENERAL DOCUMENT STYLES
 
@@ -78,6 +96,67 @@ body
       border-color: $accent
     &:required:valid
       border-color: $green
+
+.btn
+  position: relative
+  // 
+  display: flex
+  justify-content: center
+  align-items: center
+  overflow: hidden
+  // 
+  font-family: Prompt
+  // 
+  background: none
+  border: none
+  // 
+  transition: all .3s
+  &::before
+    content: ''
+    // 
+    position: absolute
+    // 
+    width: 70%
+    height: 220%
+    opacity: 0
+    // 
+    background-color: rgba(#fff, .15)
+    border-radius: 50%
+  &:active
+    &::before
+      animation: touchIn 1s infinite
+  &:focus
+    outline: none
+  &--default
+    height: 66px
+    // 
+    font-size: 15px
+    color: #fff
+    // 
+    background-color: $accent
+    +media-breakpoint-up(lg) // ≥992px
+      &:hover
+        background-color: #0055b5
+    &:active
+      background-color: #0055b5
+  &--second,
+  &--arrow
+    height: 60px
+    // 
+    font-size: 17px
+    color: $text
+    // 
+    background-color: $second
+
+@-webkit-keyframes touchIn
+  0%
+    opacity: .5
+    // 
+    transform: scale(.7)
+  100%
+    opacity: 1
+    // 
+    transform: scale(1)
 
 ////////////////////////////////////////////////
 // +media-breakpoint-down(lg) // ≤1200px

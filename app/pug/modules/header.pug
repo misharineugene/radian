@@ -1,1 +1,22 @@
 header.g-header#g-header
+  .container
+    .g-header__main
+      a.g-header__logo(href="/") 
+        img.img.g-header__logo-img.g-header__logo-img--main(src="img/dest/logo.svg", alt="#")
+        img.img.g-header__logo-img.g-header__logo-img--move(src="img/dest/habat.svg", alt="#")
+      .g-header__let
+        .g-header__let-text: p Notranja in zunanja slikopleskarska dela že več kot
+        strong.g-header__let-title 40 let
+      button.g-header__toggle.btn(type="button"): span
+      .g-header__mobile
+        button.g-header__call-btn.btn.btn--default(type="button") Pošlji povpraševanje
+        nav.g-header__nav
+          ul.g-header__nav-list.menu
+            li.menu-item: a(href="#"): span Storitve
+            li.menu-item: a(href="#"): span Reference
+            li.menu-item: a(href="#"): span Koristne informacije
+            li.menu-item: a(href="#"): span O podjetju
+            li.menu-item: a(href="#"): span Kontakt
+        .g-header__contacts
+          a.g-header__contacts-phone(href="tel:041625519") 041 625 519
+          a.g-header__contacts-email(href="mailto:info@slikopleskarstvo-habat.si") info@slikopleskarstvo-habat.si
