@@ -79,7 +79,7 @@
     text-align: center
     // 
     transition: transform .5s ease-in-out
-    +media-breakpoint-down(xl) // ≤1330px
+    +media-breakpoint-down(xl) // ≤1440px
       margin-right: 26px
     +media-breakpoint-down(lg) // ≤1200px
       order: -1
@@ -147,7 +147,7 @@
           justify-content: center
           align-items: center
           padding: 0 25px
-          +media-breakpoint-down(xl) // ≤1330px
+          +media-breakpoint-down(xl) // ≤1440px
             padding: 0 12px
           +media-breakpoint-down(lg) // ≤1200px
             justify-content: flex-start
@@ -287,7 +287,7 @@
       padding: 
         top: 110px
         bottom: 30px
-      overflow: scroll
+      overflow-y: scroll
       // 
       background-color: #fff
       // 
@@ -303,7 +303,7 @@
     // 
     width: 200px
     // 
-    transition: top .5s ease-in-out
+    transition: background-color .3s, top .5s ease-in-out
     +media-breakpoint-down(lg) // ≤1200px
       position: relative
       top: 0
