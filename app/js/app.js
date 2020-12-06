@@ -1,6 +1,7 @@
 import $ from 'jquery'; window.jQuery = $; window.$ = $ // import module example (npm i -D jquery)
 import WOW from 'wow.js';
 require('../../node_modules/slick-carousel/slick/slick.min.js') // Slick SLider
+require('../../libs/codeum/jquery.codeum.js') // Codeum
 // require('./other_script.js') // Require Other Script(s) from app/js folder Example
 
 function setVhProperty() {
@@ -48,6 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
     customPaging : function(slider, i) {
       return '<button type="button" class="slick-dot btn"></button>';
     },
+  })
+
+  $('[data-codeum="tab"]').codeumTabs()
+  $('[data-codeum="collapse"]').codeumCollapse()
+
+  $('.g-header__nav-list a span:contains("Storitve"), .g-header__submenu').on('mouseenter', function() {
+    $('.g-header__nav-list a span:contains("Storitve"), .g-header__submenu').addClass('active')
+  }).on('mouseleave', function() {
+    $('.g-header__nav-list a span:contains("Storitve"), .g-header__submenu').removeClass('active')
   })
 
   new WOW().init()
