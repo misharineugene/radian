@@ -3,20 +3,45 @@
   &__slider
     &-item
       height: 100vh
+      height: calc(var(--vh, 1vh) * 100)
       padding-top: 40vh
       // 
       background-size: cover
       background-repeat: no-repeat
       background-position: center
+      +media-breakpoint-down(sm) // ≤768px
+        position: relative
+        &::before
+          content: ''
+          // 
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 0
+          // 
+          display: block
+          width: 100%
+          height: 100%
+          // 
+          background-color: rgba(#fff, .45)
       &--n1
         padding-top: 26vh
+        +media-breakpoint-down(sm) // ≤768px
+          padding-top: 23vh
       &--n2
+        +media-breakpoint-down(sm) // ≤768px
+          padding-top: 35vh
         .intro__slider
           &-subtitle
             margin-bottom: 15px
             // 
             font-size: 44px
             line-height: 51px
+            +media-breakpoint-down(sm) // ≤768px
+              margin-bottom: 10px
+              // 
+              font-size: 20px
+              line-height: 24px
       &--n3
         .intro__slider
           &-subtitle
@@ -25,6 +50,16 @@
             font-size: 31px
             line-height: 42px
             color: #fff
+            +media-breakpoint-down(sm) // ≤768px
+              font-size: 16px
+              text-shadow: 1px 1px 2px rgba(#000, .5)
+              line-height: 20px
+    &-content
+      +media-breakpoint-down(sm) // ≤768px
+        position: relative
+        z-index: 1
+        // 
+        margin-left: 3vw
     &-subtitle
       margin-bottom: 11px
       // 
@@ -34,18 +69,35 @@
       text-transform: uppercase
       line-height: 36px
       color: $accent
+      +media-breakpoint-down(sm) // ≤768px
+        margin-bottom: 8px
+        // 
+        font-size: 20px
+        line-height: 24px
     &-title
       width: 432px
       margin-bottom: 25px
+      +media-breakpoint-down(sm) // ≤768px
+        width: 221px
+        margin-bottom: 18px
     &-text
       margin-bottom: 40px
       // 
       font-family: Prompt
       font-size: 17px
       line-height: 22px
+      +media-breakpoint-down(sm) // ≤768px
+        font-size: 15px
+        line-height: 20px
     &-btn
       padding: 21px 42px
         right: 82px
+      +media-breakpoint-down(sm) // ≤768px
+        padding: 21px 20px
+          right: 65px
+        margin-left: 3vw
+      +media-breakpoint-down(xs) // ≤576px
+        margin: 0 auto
     &_nav
       position: absolute
       bottom: 43px
@@ -60,6 +112,12 @@
       background-color: #fff
       // 
       transform: translateX(-50%)
+      +media-breakpoint-down(sm) // ≤768px
+        bottom: 23px
+      +media-breakpoint-down(xs) // ≤576px
+        max-width: 308px
+        width: 90vw
+        min-width: 270px
   .slick
     &-prev
       order: 0

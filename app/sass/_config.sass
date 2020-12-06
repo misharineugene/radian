@@ -28,6 +28,7 @@ $gutter: $grid-gutter-width
 
 @import "../fonts/icomoon/style" // IcoMoon
 @import "node_modules/slick-carousel/slick/slick.scss" // Slick Skider
+@import "node_modules/animate.css/animate.min" // Animate
 
 // FONTS LOAD SECTION
 @mixin font($fname, $furl, $weight: normal, $style: normal)
@@ -107,6 +108,7 @@ body
   // 
   font-family: Prompt
   text-align: center
+  white-space: nowrap
   line-height: 18px
   // 
   background: none
@@ -151,6 +153,9 @@ body
       background-color: #0055b5
   &--arrow
     position: relative
+    // 
+    padding: 21px
+      right: 66px
     .icon
       position: absolute
       top: 0
@@ -199,6 +204,11 @@ body
           color: $text
           &::after
             left: 100%
+    &:active
+      .icon
+        color: $text
+        &::after
+          left: 100%
   &--second,
   &--arrow
     height: 60px
@@ -207,6 +217,8 @@ body
     color: $text
     // 
     background-color: $second
+    +media-breakpoint-down(sm) // ≤768px
+      font-size: 15px
 
 @-webkit-keyframes touchIn
   0%
@@ -228,6 +240,9 @@ body
   display: block
   max-width: 100%
   height: auto
+
+// .wow
+// 	visibility: hidden
 
 ////////////////////////////////////////////////
 // +media-breakpoint-down(lg) // ≤1200px

@@ -1,6 +1,15 @@
 import $ from 'jquery'; window.jQuery = $; window.$ = $ // import module example (npm i -D jquery)
+import WOW from 'wow.js';
 require('../../node_modules/slick-carousel/slick/slick.min.js') // Slick SLider
 // require('./other_script.js') // Require Other Script(s) from app/js folder Example
+
+function setVhProperty() {
+  let vh = window.innerHeight * 0.01
+  console.log(vh)
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+} setVhProperty()
+
+window.addEventListener('resize', () => setVhProperty() )
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -40,5 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return '<button type="button" class="slick-dot btn"></button>';
     },
   })
+
+  new WOW().init()
 
 })

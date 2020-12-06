@@ -267,6 +267,10 @@
             transform: rotate(45deg)
           &::after
             transform: rotate(-45deg)
+        &:active
+          span::before,
+          span::after
+            background-color: $second
   &__mobile
     position: relative
     // 

@@ -8,6 +8,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.12.9",
 		"@babel/preset-env": "^7.12.7",
+		"animate.css": "^4.1.1",
 		"babel-loader": "^8.2.2",
 		"babel-plugin-module-resolver": "^4.0.0",
 		"bootstrap": "^4.5.3",
@@ -22,7 +23,8 @@
 		"gulp-rsync": "0.0.9",
 		"gulp-sass": "^4.1.0",
 		"slick-carousel": "^1.8.1",
-		"webpack-stream": "^6.1.1"
+		"webpack-stream": "^6.1.1",
+		"wow.js": "^1.2.2"
 	},
 	"dependencies": {
 		"jquery": "^3.5.1"
