@@ -9914,7 +9914,6 @@ body.open {
 }
 
 .g-header__main {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9922,6 +9921,12 @@ body.open {
   -webkit-transition: max-height .5s ease-in-out .1s;
   -o-transition: max-height .5s ease-in-out .1s;
   transition: max-height .5s ease-in-out .1s;
+}
+
+@media (min-width: 1200px) {
+  .g-header__main {
+    position: relative;
+  }
 }
 
 @media (max-width: 1199.98px) {

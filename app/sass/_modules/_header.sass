@@ -22,12 +22,12 @@
   a:hover
     text-decoration: none
   &__main
-    position: relative
-    // 
     display: flex
     max-height: 125px
     // 
     transition: max-height .5s ease-in-out .1s
+    +media-breakpoint-up(xl) // ≥1200px
+      position: relative
     +media-breakpoint-down(lg) // ≤1200px
       justify-content: space-between
       height: 54px
